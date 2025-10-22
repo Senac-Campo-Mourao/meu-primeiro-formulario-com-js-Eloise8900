@@ -15,7 +15,7 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
                         <h1 class="mb-0">Cadastro</h1>
@@ -60,6 +60,34 @@
                                 Mostrar Cliente
                             </button>
                         </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h2> Cliente Cadastrado</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>CPF</th>
+                                        <th>Telefone</th>   
+                                        <th>Salário</th>
+                                        <th>Crédito</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listaClientes">
+                                    <tr>
+                                        <td colspan="7" class="text-center text-muted">Nenhum Cliente Cadastrado</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
