@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -23,21 +25,32 @@
 
                     <div class="card-body">
                         <form id="formCadastro">
+
                             <div class="mb-3">
                                 <label for="clientName" class="form-label">Nome do Cliente:</label>
                                 <input type="text" id="clientName" class="form-control"
                                     placeholder="Escreva aqui o nome do cliente" />
                             </div>
+
                             <div class="mb-3">
                                 <label for="clientCPF" class="form-label">CPF:</label>
                                 <input type="text" id="clientCPF" class="form-control"
                                     placeholder="Digite o CPF do cliente" />
                             </div>
+
                             <div class="mb-3">
                                 <label for="clientTelefone" class="form-label">Telefone:</label>
                                 <input type="tel" id="clientTelefone" class="form-control"
                                     placeholder="Digite o Celular do cliente" />
                             </div>
+
+                            <div class="mb-3">
+                                <label for=" clientCidade" class="form-label">Cidade</label>
+                                <select id="clientCidade" class="form-control">
+                                    <option value="">Selecione uma cidade</option>
+                                </select>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="clientDtNascimento" class="form-label">Data de Nascimento:</label>
                                 <input type="date" id="clientDtNascimento" class="form-control"
@@ -49,8 +62,6 @@
                                 <input type="text" id="clientSalario" class="form-control"
                                     placeholder="Digite o salário do cliente" />
                             </div>
-
-
 
                             <button type="submit" class="btn btn-primary">
                                 Salvar
@@ -66,18 +77,20 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-success text-white">
-                        <h2> Cliente Cadastrado</h2>
+                        <h2 class="mb-0"> Cliente Cadastrado</h2>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table-striped table-hover">
+                            <table class="table table-striped table-hover ">
                                 <thead>
                                     <tr>
                                         <th>Nome</th>
                                         <th>CPF</th>
-                                        <th>Telefone</th>   
-                                        <th>Salário</th>
+                                        <th>Telefone</th>
+                                        <th>Data de Nascimento</th>
                                         <th>Crédito</th>
+                                        <th>Salário</th>
+                                        <th>Cidade</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -104,6 +117,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
         integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -112,5 +127,15 @@
         integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script>
+        $('#clientCPF').mask('000.000.000-00');
+        $('#clientTelefone').mask('(00) 00000-0000');
+
+        $('#clientSalario').maskMoney({
+            prefix: 'R$ ',
+            allowNegative: false, thousands: '.', decimal: ',', affixesStay: false
+        });
+    </script>
     <script src="script/script.js"></script>
 </body>
+</html>
